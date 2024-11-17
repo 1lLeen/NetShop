@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NetShop.Application.Models.Products
 {
-    public class ProductModel
+    public class ProductModel:BaseModel
     {
         public string Name { get; set; }
         public string Description { get; set; }
