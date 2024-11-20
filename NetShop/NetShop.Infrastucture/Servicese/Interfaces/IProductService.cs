@@ -13,7 +13,7 @@ namespace NetShop.Infrastucture.Servicese.Interfaces
         Task<GetProductDto> GetById(Guid Id);
         Task<List<GetProductDto>> GetAll();
         Task<GetProductDto> CreateProduct(CreateProductDto createProductDto);
-        Task<GetProductDto> UpdateProduct(UpdateProductDto updateProductDto);
+        Task<GetProductDto> UpdateProduct(Guid id, UpdateProductDto updateProductDto);
         Task<GetProductDto> DeleteProduct(Guid Id);
     }
 }

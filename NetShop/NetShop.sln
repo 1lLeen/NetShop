@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetShop.Dto", "NetShop.Dto\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetShop.Application", "NetShop.Application\NetShop.Application.csproj", "{E6384D57-59E3-438D-9B90-65AAB06C3A00}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetShop.Infrastucture", "NetShop.Infrastucture\NetShop.Infrastucture.csproj", "{18BC8AA6-D37F-4E99-A49F-1FF9A4092EBC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetShop.Infrastucture", "NetShop.Infrastucture\NetShop.Infrastucture.csproj", "{18BC8AA6-D37F-4E99-A49F-1FF9A4092EBC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -22,7 +22,7 @@ namespace NetShop.Infrastucture.Servicese
             var product = await _repository.GetByIdAsync(Id);
             return mapper.Map<GetProductDto>(product);
         }
-        public async Task<List<GetProductDto>> GetAll() => mapper.Map<List<GetProductDto>>(await _repository.GetAllAsync());
+        public async Task<IEnumerable<GetProductDto>> GetAll() => mapper.Map<List<GetProductDto>>(await _repository.GetAllAsync());
         public async Task<GetProductDto> CreateProduct(CreateProductDto createProductDto)
         {
             var product = mapper.Map<ProductModel>(createProductDto);
@@ -50,6 +50,7 @@ namespace NetShop.Infrastucture.Servicese
             var result = mapper.Map<GetProductDto>(await _repository.DeleteAsync(product));
             return result;
         }
-    
+
+        
     }
 }

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace NetShop.Infrastucture.Servicese.Interfaces
 {
-    public interface ICategoryServices:IAbstractService<GetCategoryDto, CreateCategoryDto, UpdateCategoryDto>
+    public interface ICategoryService:IAbstractService<GetCategoryDto, CreateCategoryDto, UpdateCategoryDto>
     {
         Task<GetCategoryDto> GetById(Guid Id);
         Task<List<GetCategoryDto>> GetAll();

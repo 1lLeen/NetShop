@@ -14,8 +14,8 @@ namespace NetShop.Infrastucture.Servicese.Interfaces
     {
         Task<IEnumerable<TGet>> GetAll();
         Task<TGet> GetById(Guid id);
-        Task<TGet> Create(TGet entity);
-        Task<TGet> Update(TGet entity);
+        Task<TGet> Create(TCreate entity);
+        Task<TGet> Update(TUpdate entity);
         Task<TGet> Delete(Guid id);
     }
 }

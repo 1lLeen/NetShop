@@ -15,9 +15,9 @@ using System.Threading.Tasks;
 
 namespace NetShop.Infrastucture.Servicese
 {
-    public class CategoryServices : AbstractService<ICategoryRepository, CategoryModel, GetCategoryDto, CreateCategoryDto, UpdateCategoryDto>,ICategoryServices
+    public class CategoryService : AbstractService<ICategoryRepository, CategoryModel, GetCategoryDto, CreateCategoryDto, UpdateCategoryDto>,ICategoryService
     {
-        public CategoryServices(ILogger logger, IMapper mapper, ICategoryRepository repository) : base(logger, mapper, repository)
+        public CategoryService(ILogger logger, IMapper mapper, ICategoryRepository repository) : base(logger, mapper, repository)
         {
         }
         public async Task<GetCategoryDto> GetById(Guid Id)
