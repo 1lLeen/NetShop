@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NetShop.Dto.Dtos.Interfaces
 {
-    internal interface IUpdate
+    public interface IUpdate
     {
     }
 }
