@@ -12,8 +12,8 @@ namespace NetShop.Infrastucture.Servicese.Interfaces
     {
         Task<GetCategoryDto> GetById(Guid Id);
         Task<List<GetCategoryDto>> GetAll();
-        Task<GetCategoryDto> Create(CreateCategoryDto CreateCategoryDto);
-        Task<GetCategoryDto> Update(UpdateCategoryDto UpdateCategoryDto);
-        Task<GetCategoryDto> DeleteById(Guid Id);
+        Task<GetCategoryDto> CreateCategory(CreateCategoryDto CreateCategoryDto);
+        Task<GetCategoryDto> UpdateCategory(UpdateCategoryDto UpdateCategoryDto);
+        Task<GetCategoryDto> DeleteCategory(Guid Id);
     }
 }
