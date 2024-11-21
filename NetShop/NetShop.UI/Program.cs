@@ -1,7 +1,7 @@
 using NetShop.Application;
 using Microsoft.EntityFrameworkCore;
 using NetShop.Infrastucture;
-using NetShop.Infrastucture.MappingConfig;
+using NetShop.Application.MappingConfig;
 
 var builder = WebApplication.CreateBuilder(args);
 

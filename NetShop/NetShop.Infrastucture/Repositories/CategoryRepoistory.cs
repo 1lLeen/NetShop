@@ -1,12 +1,12 @@
-﻿using NetShop.Application.Models.Categories;
-using NetShop.Application.Repositories.Interfaces;
+﻿using NetShop.Infrastucture.Models.Categories;
+using NetShop.Infrastucture.Repositories.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NetShop.Application.Repositories
+namespace NetShop.Infrastucture.Repositories
 {
     public class CategoryRepoistory:AbstractRepository<CategoryModel>, ICategoryRepository
     {

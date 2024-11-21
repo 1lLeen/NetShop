@@ -1,11 +1,11 @@
-﻿using NetShop.Application.Models;
+﻿using NetShop.Infrastucture.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NetShop.Application.Repositories.Interfaces
+namespace NetShop.Infrastucture.Repositories.Interfaces
 {
     public interface IAbstractRepository<TModel> where TModel : BaseModel
     {

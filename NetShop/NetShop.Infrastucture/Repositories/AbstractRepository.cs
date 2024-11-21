@@ -1,13 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using NetShop.Application.Models;
-using NetShop.Application.Repositories.Interfaces;
+using NetShop.Infrastucture.Models;
+using NetShop.Infrastucture.Repositories.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NetShop.Application.Repositories
+namespace NetShop.Infrastucture.Repositories
 {
     public abstract class AbstractRepository<TModel> : IAbstractRepository<TModel> where TModel : BaseModel
     {

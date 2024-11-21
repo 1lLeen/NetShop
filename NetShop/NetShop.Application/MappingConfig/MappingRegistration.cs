@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NetShop.Infrastucture.MappingConfig
+namespace NetShop.Application.MappingConfig
 {
     public static class MappingRegistration
     {

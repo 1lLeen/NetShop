@@ -1,15 +1,15 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using NetShop.Application.Repositories.Interfaces;
-using NetShop.Application.Repositories;
+using NetShop.Infrastucture.Repositories.Interfaces;
+using NetShop.Infrastucture.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using NetShop.Infrastucture.Servicese.Interfaces;
-using NetShop.Infrastucture.Servicese;
+using NetShop.Application.Servicese.Interfaces;
+using NetShop.Application.Servicese;
 
-namespace NetShop.Infrastucture.MappingConfig
+namespace NetShop.Application.MappingConfig
 {
     public static class Registration
     {

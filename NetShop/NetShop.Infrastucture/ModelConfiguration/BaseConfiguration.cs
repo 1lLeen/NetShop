@@ -1,14 +1,14 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using NetShop.Application.Models;
+using NetShop.Infrastucture.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NetShop.Application.ModelConfiguration
+namespace NetShop.Infrastucture.ModelConfiguration
 {
     public class BaseConfiguration<TModel> : IEntityTypeConfiguration<TModel> where TModel : BaseModel
     {

@@ -1,16 +1,16 @@
 ﻿using AutoMapper;
 using Microsoft.Extensions.Logging;
-using NetShop.Application.Models;
-using NetShop.Application.Repositories.Interfaces;
+using NetShop.Infrastucture.Models;
+using NetShop.Infrastucture.Repositories.Interfaces;
 using NetShop.Dto.Dtos.Interfaces;
-using NetShop.Infrastucture.Servicese.Interfaces;
+using NetShop.Application.Servicese.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NetShop.Infrastucture.Servicese
+namespace NetShop.Application.Servicese
 {
     public class AbstractService<TRepository,TModel,TGet,TCreate,TUpdate>
         where TRepository : IAbstractRepository<TModel>

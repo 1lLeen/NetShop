@@ -1,16 +1,16 @@
 ﻿using AutoMapper;
 using Microsoft.Extensions.Logging;
-using NetShop.Application.Models.Products;
-using NetShop.Application.Repositories.Interfaces;
+using NetShop.Infrastucture.Models.Products;
+using NetShop.Infrastucture.Repositories.Interfaces;
 using NetShop.Dto.Dtos.ProductsDto;
-using NetShop.Infrastucture.Servicese.Interfaces;
+using NetShop.Application.Servicese.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NetShop.Infrastucture.Servicese
+namespace NetShop.Application.Servicese
 {
     public class ProductService: AbstractService<IProductRepository, ProductModel, GetProductDto, CreateProductDto, UpdateProductDto>,IProductService
     {

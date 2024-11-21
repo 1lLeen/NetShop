@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using NetShop.Application.Models.Categories;
-using NetShop.Application.Models.Products;
+using NetShop.Infrastucture.Models.Categories;
+using NetShop.Infrastucture.Models.Products;
 using NetShop.Dto.Dtos.CategoriesDto;
 using NetShop.Dto.Dtos.ProductsDto;
 using System;
@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NetShop.Infrastucture.MappingConfig
+namespace NetShop.Application.MappingConfig
 {
     public class MappingProfile:Profile
     {

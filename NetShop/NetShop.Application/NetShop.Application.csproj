@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\NetShop.Dto\NetShop.Dto.csproj" />
+    <ProjectReference Include="..\NetShop.Infrastucture\NetShop.Infrastucture.csproj" />
   </ItemGroup>
 
 </Project>

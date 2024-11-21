@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NetShop.Infrastucture.Servicese.Interfaces
+namespace NetShop.Application.Servicese.Interfaces
 {
     public interface IProductService : IAbstractService<GetProductDto, CreateProductDto, UpdateProductDto>
     {

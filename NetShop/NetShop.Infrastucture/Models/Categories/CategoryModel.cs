@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NetShop.Application.Models.Categories
+namespace NetShop.Infrastucture.Models.Categories
 {
     public class CategoryModel:BaseModel
     {
