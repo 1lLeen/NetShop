@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NetShop.Infrastucture;
 
@@ -11,9 +12,11 @@ using NetShop.Infrastucture;
 namespace NetShop.Infrastucture.Migrations
 {
     [DbContext(typeof(NetShopDbContext))]
-    partial class NetShopDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241122100157_AddNewColumnUrlImg")]
+    partial class AddNewColumnUrlImg
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

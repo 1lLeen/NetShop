@@ -11,6 +11,7 @@ namespace NetShop.Infrastucture.Models.Products
         public string Name { get; set; }
         public string Description { get; set; }
         public string Description2 { get; set; }
+        public string UrlImg { get; set; }
         public Guid CategoryId { get; set; }
 
     }

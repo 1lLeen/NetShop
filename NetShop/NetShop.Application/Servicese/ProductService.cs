@@ -37,6 +37,7 @@ namespace NetShop.Application.Servicese
                 product.Name = updateProductDto.NameProduct;
                 product.Description = updateProductDto.DescriptionProduct;
                 product.Description2 = updateProductDto.DescriptionProduct2;
+                product.UrlImg = updateProductDto.UrlImg;
                 product.CategoryId = updateProductDto.IdCategory;
                 product.UpdateTime = DateTime.Now;
             }
