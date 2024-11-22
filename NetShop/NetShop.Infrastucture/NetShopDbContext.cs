@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore.SqlServer;
 
 namespace NetShop.Infrastucture
 {
@@ -20,9 +21,14 @@ namespace NetShop.Infrastucture
         
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
+            base.OnModelCreating(modelBuilder); 
             modelBuilder.ApplyConfiguration(new BaseConfiguration<ProductModel>());
             modelBuilder.ApplyConfiguration(new BaseConfiguration<CategoryModel>());
+        }
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            base.OnConfiguring(optionsBuilder);
+            optionsBuilder.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=netshopdb");
         }
     }
 }
