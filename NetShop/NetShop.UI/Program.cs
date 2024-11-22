@@ -2,6 +2,9 @@ using NetShop.Application;
 using Microsoft.EntityFrameworkCore;
 using NetShop.Infrastucture;
 using NetShop.Application.MappingConfig;
+using Swashbuckle.AspNetCore;
+using Microsoft.AspNetCore.Builder;
+using NetShop.UI.Controllers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,12 +17,27 @@ builder.Configuration
 .Build();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddDbContext<NetShopDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaulConneection")));
+builder.Services.RegistrationLogger();
+builder.Services.RegistrationAutoMapper();
 builder.Services.RegistrationRepositories();
 builder.Services.RegistrationServices();
-builder.Services.RegistrationAutoMapper();
+builder.Services.AddControllers();
+builder.Services.AddRazorPages();
 
+builder.Services.AddSwaggerGen(swaggerGenOptions =>
+{
+    swaggerGenOptions.UseAllOfForInheritance();
+    swaggerGenOptions.UseOneOfForPolymorphism();
+
+    swaggerGenOptions.SelectSubTypesUsing(baseType => typeof(Program).Assembly.GetTypes().Where(type => type.IsSubclassOf(baseType))
+    );
+});
 var app = builder.Build();
-
+app.UseSwaggerUI();
+app.UseSwagger(options =>
+{
+    options.SerializeAsV2 = true;
+});
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
@@ -37,6 +55,5 @@ app.UseAuthorization();
 
 app.MapRazorPages();
 
-app.MapControllers();
-
+app.MapControllers(); 
 app.Run();

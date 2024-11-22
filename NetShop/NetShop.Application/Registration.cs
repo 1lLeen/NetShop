@@ -8,21 +8,30 @@ using System.Text;
 using System.Threading.Tasks;
 using NetShop.Application.Servicese.Interfaces;
 using NetShop.Application.Servicese;
+using Microsoft.Extensions.Logging;
 
 namespace NetShop.Application.MappingConfig
 {
     public static class Registration
     {
+        public static void RegistrationLogger(this IServiceCollection services) 
+        {
+            var serviceProvider = services.BuildServiceProvider();
+            var loggerProduct = serviceProvider.GetRequiredService<ILogger<ProductService>>();
+            var loggerCategory = serviceProvider.GetRequiredService<ILogger<CategoryService>>();
+            services.AddSingleton(typeof(ILogger), loggerProduct);
+            services.AddSingleton(typeof(ILogger), loggerCategory);
+        }
         public static void RegistrationRepositories(this IServiceCollection services)
         {
-            services.AddScoped<ICategoryRepository, CategoryRepoistory>();
-            services.AddScoped<IProductRepository, ProductRepoistory>();
+            services.AddTransient<ICategoryRepository, CategoryRepoistory>();
+            services.AddTransient<IProductRepository, ProductRepoistory>();
 
         }
         public static void RegistrationServices(this IServiceCollection services)
         {
-            services.AddScoped<IProductService, ProductService>();
-            services.AddScoped<ICategoryService, CategoryService>();
+            services.AddTransient<IProductService, ProductService>();
+            services.AddTransient<ICategoryService, CategoryService>();
         }
     }
 }
