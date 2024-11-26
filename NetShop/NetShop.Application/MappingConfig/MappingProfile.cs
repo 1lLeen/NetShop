@@ -16,12 +16,18 @@ namespace NetShop.Application.MappingConfig
         public MappingProfile()
         {
             CreateMap<ProductModel, GetProductDto>().ReverseMap();
-            CreateMap<ProductModel, UpdateProductDto>();
+            CreateMap<ProductModel, CreateProductDto>().ReverseMap();
+            CreateMap<ProductModel, UpdateProductDto>().ReverseMap();
+            CreateMap<ProductModel, GetProductDto>();
             CreateMap<ProductModel, CreateProductDto>();
+            CreateMap<ProductModel, UpdateProductDto>();
 
             CreateMap<CategoryModel, GetCategoryDto>().ReverseMap();
-            CreateMap<CategoryModel, UpdateCategoryDto>();
+            CreateMap<CategoryModel, CreateCategoryDto>().ReverseMap();
+            CreateMap<CategoryModel, UpdateCategoryDto>().ReverseMap();
+            CreateMap<CategoryModel, GetCategoryDto>();
             CreateMap<CategoryModel, CreateCategoryDto>();
+            CreateMap<CategoryModel, UpdateCategoryDto>();
         }
     }
 }

@@ -37,8 +37,8 @@ namespace NetShop.Application.Servicese
             var category = await _repository.GetByIdAsync(id);
             if(category != null)
             {
-                category.Name = updateCategoryDto.NameCategory;
-                category.UpdateTime = DateTime.Now;
+                category.NameCategory = updateCategoryDto.NameCategory;
+                category.UpdatedTime = DateTime.Now;
             }
             var result = mapper.Map<GetCategoryDto>(await _repository.UpdateAsync(category));
             return result;

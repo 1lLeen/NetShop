@@ -24,7 +24,7 @@ namespace NetShop.Infrastucture.ModelConfiguration
                 .ValueGeneratedOnAdd()
                 .Metadata.SetAfterSaveBehavior(PropertySaveBehavior.Save);
 
-            builder.Property(x => x.UpdateTime)
+            builder.Property(x => x.UpdatedTime)
                 .IsRequired()
                 .ValueGeneratedOnAddOrUpdate()
                 .Metadata.SetAfterSaveBehavior(PropertySaveBehavior.Save);

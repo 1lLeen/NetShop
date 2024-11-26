@@ -5,10 +5,11 @@ using NetShop.Application.MappingConfig;
 using Swashbuckle.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using NetShop.UI.Controllers;
+using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+
 builder.Services.AddRazorPages();
 builder.Configuration
 .AddJsonFile($"appsettings.json", optional: false)
@@ -22,7 +23,9 @@ builder.Services.RegistrationAutoMapper();
 builder.Services.RegistrationRepositories();
 builder.Services.RegistrationServices();
 builder.Services.AddControllers();
-builder.Services.AddRazorPages();
+builder.Services.AddSwaggerGen();
+
+
 
 builder.Services.AddSwaggerGen(swaggerGenOptions =>
 {
@@ -33,17 +36,16 @@ builder.Services.AddSwaggerGen(swaggerGenOptions =>
     );
 });
 var app = builder.Build();
-app.UseSwaggerUI();
-app.UseSwagger(options =>
+if (app.Environment.IsDevelopment())
 {
-    options.SerializeAsV2 = true;
-});
-// Configure the HTTP request pipeline.
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
+
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-    app.UseHsts();
+app.UseHsts();
 }
 
 app.UseHttpsRedirection();
@@ -54,6 +56,7 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapRazorPages();
+app.MapSwagger();
 
-app.MapControllers(); 
+app.MapControllers();
 app.Run();

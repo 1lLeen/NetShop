@@ -22,7 +22,8 @@ namespace NetShop.Infrastucture.Repositories
         {
             model.Id = Guid.NewGuid();
             model.CreatedTime = DateTime.Now;
-            model.UpdateTime = DateTime.Now;
+            model.UpdatedTime = DateTime.Now;
+            model.IsDeleted = false;
             await _dbSet.AddAsync(model);
             await _context.SaveChangesAsync();
             return model;
@@ -31,7 +32,7 @@ namespace NetShop.Infrastucture.Repositories
         public async Task<TModel> DeleteAsync(TModel model)
         {
             model.IsDeleted = true;
-            model.UpdateTime = DateTime.UtcNow.ToUniversalTime();
+            model.UpdatedTime = DateTime.UtcNow.ToUniversalTime();
             _dbSet.Update(model);
             await _context.SaveChangesAsync();
             return model;
@@ -43,7 +44,7 @@ namespace NetShop.Infrastucture.Repositories
 
         public async Task<TModel> UpdateAsync(TModel model)
         {
-            model.UpdateTime = DateTime.UtcNow;
+            model.UpdatedTime = DateTime.UtcNow;
             var entry = _context.Entry(model);
             entry.State = EntityState.Modified;
             await _context.SaveChangesAsync();

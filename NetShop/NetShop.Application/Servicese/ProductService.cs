@@ -34,12 +34,12 @@ namespace NetShop.Application.Servicese
             var product = await _repository.GetByIdAsync(id);
             if (product != null)
             {
-                product.Name = updateProductDto.NameProduct;
-                product.Description = updateProductDto.DescriptionProduct;
-                product.Description2 = updateProductDto.DescriptionProduct2;
+                product.NameProduct = updateProductDto.NameProduct;
+                product.DescriptionProduct = updateProductDto.DescriptionProduct;
+                product.DescriptionProduct2 = updateProductDto.DescriptionProduct2;
                 product.UrlImg = updateProductDto.UrlImg;
-                product.CategoryId = updateProductDto.IdCategory;
-                product.UpdateTime = DateTime.Now;
+                product.IdCategory = updateProductDto.IdCategory;
+                product.UpdatedTime = DateTime.Now;
             }
             var result = mapper.Map<GetProductDto>(await _repository.UpdateAsync(product));
             return result;

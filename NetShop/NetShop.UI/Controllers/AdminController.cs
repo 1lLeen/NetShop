@@ -6,13 +6,13 @@ using NetShop.Dto.Dtos.CategoriesDto;
 using NetShop.Dto.Dtos.Interfaces;
 using NetShop.Dto.Dtos.ProductsDto;
 using NetShop.Infrastucture.Models.Categories;
-using System.Web.Http;
+using System.Web;
 
 namespace NetShop.UI.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class AdminController : ControllerBase
+    public class AdminController : Controller
     {
         protected readonly IProductService productService;
         protected readonly ICategoryService categoryService;
@@ -24,29 +24,34 @@ namespace NetShop.UI.Controllers
             this.logger = logger; 
         }
 
-        #region MethodsOfProducts
+        #region MethodsOfProducts 
+        [HttpGet]
         [Route("/[controller]/[action]")]
         public async Task<IEnumerable<GetProductDto>> GetAllProducts()
         {
             return(await productService.GetAll());
         }
+        [HttpGet]
         [Route("/[controller]/[action]")]
         public async Task<GetProductDto> GetProductById(Guid id)
         {
             return(await productService.GetById(id));
         }
+        [HttpPost]
         [Route("/[controller]/[action]")]
         public async Task<GetProductDto>CreateProduct(CreateProductDto create)
         {
             var result = await productService.CreateProduct(create);
             return(result);
         }
+        [HttpPut]
         [Route("/[controller]/[action]")]
         public async Task<GetProductDto> UpdateProduct(Guid id,UpdateProductDto update)
         {
             var result = await productService.UpdateProduct(id,update);
             return(result);
         }
+        [HttpDelete]
         [Route("/[controller]/[action]")]
         public async Task<GetProductDto> DeleteProduct(Guid id)
         {
@@ -58,29 +63,34 @@ namespace NetShop.UI.Controllers
         /// Swagger methods
         /// </summary>
         #region MethodsOfCategories
+
+        [HttpGet]
         [Route("/[controller]/[action]")]
         public async Task<IEnumerable<GetCategoryDto>> GetAllCategories()
         {
             return(await categoryService.GetAll());
         }
+        [HttpGet]
         [Route("/[controller]/[action]")]
         public async Task<GetCategoryDto> GetCategoryById(Guid id)
         {
             return (await categoryService.GetById(id));
         }
+        [HttpPost]
         [Route("/[controller]/[action]")]
         public async Task<GetCategoryDto> CreateCategory(CreateCategoryDto create)
         {
             var result = await categoryService.CreateCategory(create);
             return (result);
         }
-
+        [HttpPut]
         [Route("/[controller]/[action]")]
         public async Task<GetCategoryDto> UpdateCategory(UpdateCategoryDto update)
         {
             var result = (await categoryService.UpdateCategory(update));
             return(result);
         }
+        [HttpDelete]
         [Route("/[controller]/[action]")]
         public async Task<GetCategoryDto> DeleteCategory(Guid id) 
         {
