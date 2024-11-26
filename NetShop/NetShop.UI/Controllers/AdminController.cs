@@ -39,16 +39,30 @@ namespace NetShop.UI.Controllers
         }
         [HttpPost]
         [Route("/[controller]/[action]")]
-        public async Task<GetProductDto>CreateProduct(CreateProductDto create)
+        public async Task<GetProductDto>CreateProduct(string name, string desc, string desc2, string urlImg, Guid idCategory)
         {
-            var result = await productService.CreateProduct(create);
+            var result = await productService.CreateProduct(new CreateProductDto
+            {
+                NameProduct = name,
+                DescriptionProduct = desc,
+                DescriptionProduct2 = desc2,
+                UrlImg = urlImg,
+                IdCategory = idCategory
+            });
             return(result);
         }
         [HttpPut]
         [Route("/[controller]/[action]")]
-        public async Task<GetProductDto> UpdateProduct(Guid id,UpdateProductDto update)
+        public async Task<GetProductDto> UpdateProduct(Guid id, string name, string desc, string desc2, string urlImg, Guid idCategory)
         {
-            var result = await productService.UpdateProduct(id,update);
+            var result = await productService.UpdateProduct(id,new UpdateProductDto
+            {
+                NameProduct = name,
+                DescriptionProduct = desc,
+                DescriptionProduct2 = desc2,
+                UrlImg = urlImg,
+                IdCategory = idCategory
+            });
             return(result);
         }
         [HttpDelete]
@@ -78,15 +92,19 @@ namespace NetShop.UI.Controllers
         }
         [HttpPost]
         [Route("/[controller]/[action]")]
-        public async Task<GetCategoryDto> CreateCategory(CreateCategoryDto create)
+        public async Task<GetCategoryDto> CreateCategory(string name)
         {
+            CreateCategoryDto create = new CreateCategoryDto();
+            create.NameCategory = name;
             var result = await categoryService.CreateCategory(create);
             return (result);
         }
         [HttpPut]
         [Route("/[controller]/[action]")]
-        public async Task<GetCategoryDto> UpdateCategory(UpdateCategoryDto update)
+        public async Task<GetCategoryDto> UpdateCategory(Guid id, string name)
         {
+            var update = new UpdateCategoryDto();
+            update.NameCategory = name;
             var result = (await categoryService.UpdateCategory(update));
             return(result);
         }
