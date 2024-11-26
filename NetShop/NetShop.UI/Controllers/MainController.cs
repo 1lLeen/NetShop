@@ -3,6 +3,7 @@ using NetShop.Application.Servicese.Interfaces;
 
 namespace NetShop.UI.Controllers
 {
+    [Route("[controller]/[action]")]
     public class MainController : Controller
     {
         protected readonly IProductService productService;

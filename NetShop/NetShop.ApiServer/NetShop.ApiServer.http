@@ -1,0 +1,6 @@
+@NetShop.ApiServer_HostAddress = http://localhost:5120
+
+GET {{NetShop.ApiServer_HostAddress}}/swagger/
+Accept: application/json
+
+###
