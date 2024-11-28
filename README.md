@@ -1,7 +1,5 @@
 # NetShop
 
-The NetShop it's my presentation project. 
-I wanna show how can I code =3 
 
 
 
