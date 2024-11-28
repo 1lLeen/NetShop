@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NetShop.Dto.Dtos.Interfaces
+namespace NetShop.Infrastucture.Models
 {
-    public interface IUpdate
+    public class BaseNamedModel:BaseModel
     {
+        public string Name { get; set; }
     }
 }
