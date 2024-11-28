@@ -9,9 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetShop.Application", "NetS
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetShop.Infrastucture", "NetShop.Infrastucture\NetShop.Infrastucture.csproj", "{18BC8AA6-D37F-4E99-A49F-1FF9A4092EBC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetShop.UI", "NetShop.UI\NetShop.UI.csproj", "{B218F340-F1F5-4810-8B3D-0D070B5E74AD}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetShop.ApiServer", "NetShop.ApiServer\NetShop.ApiServer.csproj", "{0218B220-AB24-4A6C-87EC-166CE3813B3D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetShop.ApiServer", "NetShop.ApiServer\NetShop.ApiServer.csproj", "{0218B220-AB24-4A6C-87EC-166CE3813B3D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,10 +29,6 @@ Global
 		{18BC8AA6-D37F-4E99-A49F-1FF9A4092EBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{18BC8AA6-D37F-4E99-A49F-1FF9A4092EBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{18BC8AA6-D37F-4E99-A49F-1FF9A4092EBC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B218F340-F1F5-4810-8B3D-0D070B5E74AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B218F340-F1F5-4810-8B3D-0D070B5E74AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B218F340-F1F5-4810-8B3D-0D070B5E74AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B218F340-F1F5-4810-8B3D-0D070B5E74AD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0218B220-AB24-4A6C-87EC-166CE3813B3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0218B220-AB24-4A6C-87EC-166CE3813B3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0218B220-AB24-4A6C-87EC-166CE3813B3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
