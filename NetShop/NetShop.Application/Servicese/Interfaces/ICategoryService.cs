@@ -11,9 +11,9 @@ namespace NetShop.Application.Servicese.Interfaces
     public interface ICategoryService:IAbstractService<GetCategoryDto, CreateCategoryDto, UpdateCategoryDto>
     {
         Task<GetCategoryDto> GetById(Guid Id);
-        Task<List<GetCategoryDto>> GetAll();
+        Task<IEnumerable<GetCategoryDto>> GetAll();
         Task<GetCategoryDto> CreateCategory(CreateCategoryDto createCategoryDto);
-        Task<GetCategoryDto> UpdateCategory(UpdateCategoryDto updateCategoryDto);
+        Task<GetCategoryDto> UpdateCategory(Guid id, UpdateCategoryDto updateCategoryDto);
         Task<GetCategoryDto> DeleteCategory(Guid Id);
     }
 }

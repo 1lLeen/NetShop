@@ -25,7 +25,7 @@ namespace NetShop.Application.Servicese
             var category = await _repository.GetByIdAsync(Id);
             return mapper.Map<GetCategoryDto>(category);
         }
-        public async Task<List<GetCategoryDto>> GetAll()=>  mapper.Map<List<GetCategoryDto>>(await _repository.GetAllAsync());
+        public async Task<IEnumerable<GetCategoryDto>> GetAll()=>  mapper.Map<List<GetCategoryDto>>(await _repository.GetAllAsync());
         public async Task<GetCategoryDto> CreateCategory(CreateCategoryDto createCategoryDto)
         {
             var category = mapper.Map<CategoryModel>(createCategoryDto);
@@ -49,26 +49,6 @@ namespace NetShop.Application.Servicese
             var category = await _repository.GetByIdAsync(id);
             var result = mapper.Map<GetCategoryDto>(await _repository.DeleteAsync(category));
             return result;
-        }
-
-        public Task<GetCategoryDto> UpdateCategory(UpdateCategoryDto UpdateCategoryDto)
-        {
-            throw new NotImplementedException();
-        }
-
-        Task<IEnumerable<GetCategoryDto>> IAbstractService<GetCategoryDto, CreateCategoryDto, UpdateCategoryDto>.GetAll()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<GetCategoryDto> Create(GetCategoryDto entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<GetCategoryDto> Update(GetCategoryDto entity)
-        {
-            throw new NotImplementedException();
         }
     }
 }
