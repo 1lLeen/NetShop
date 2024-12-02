@@ -1,6 +1,6 @@
 # NetShop
-The NetShop it's my presentation project. 
-I wanna show how can I code =3 
+The NetShop it's net market to buy something
+It's presentation project to show my skills in .net 8 
 
 
 
