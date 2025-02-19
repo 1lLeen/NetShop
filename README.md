@@ -1,8 +1,19 @@
 # NetShop
-The NetShop it's net market to buy something
-It's presentation project to show my skills in .net 8 
 
+Интернет-магазин, реализованный на базе .NET Core с использованием базы данных MSSQL.
 
+## Функционал
+- Каталог товаров.
+- Корзина покупок.
+- Оформление заказа.
+
+## Установка
+1. Клонируйте репозиторий: `git clone https://github.com/1lLeen/NetShop.git`
+2. Установите зависимости: `dotnet restore`
+3. Настройте базу данных в `appsettings.json`.
+4. Запустите миграции: `dotnet ef database update`
+5. Запустите проект: `dotnet run`
+   
 
 ## Getting started
 
