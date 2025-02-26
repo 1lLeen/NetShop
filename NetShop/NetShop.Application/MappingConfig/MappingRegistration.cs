@@ -1,17 +1,11 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace NetShop.Application.MappingConfig
+namespace NetShop.Application.MappingConfig;
+
+public static class MappingRegistration
 {
-    public static class MappingRegistration
+    public static void RegistrationAutoMapper(this IServiceCollection services)
     {
-        public static void RegistrationAutoMapper(this IServiceCollection services)
-        {
-            services.AddAutoMapper(typeof(MappingProfile));
-        }
+        services.AddAutoMapper(typeof(MappingProfile));
     }
 }

@@ -1,16 +1,9 @@
-﻿
-using NetShop.Dto.Dtos.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using NetShop.Dto.Dtos.Interfaces;
 
-namespace NetShop.Dto.Dtos.ProductsDto
+namespace NetShop.Dto.Dtos.ProductsDto;
+
+public class GetProductDto:BaseProductDto,IGet
 {
-    public class GetProductDto:BaseProductDto,IGet
-    {
-        public DateTime CreatedTime { get; set; }
-        public DateTime UpdatedTIme { get;set; }
-    }
+    public DateTime CreatedTime { get; set; }
+    public DateTime UpdatedTIme { get;set; }
 }

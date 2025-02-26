@@ -1,17 +1,13 @@
-﻿using NetShop.Infrastucture.Models.Products;
+﻿using Microsoft.EntityFrameworkCore;
+using NetShop.Infrastucture.Models.Products;
 using NetShop.Infrastucture.Repositories.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace NetShop.Infrastucture.Repositories
+namespace NetShop.Infrastucture.Repositories;
+
+public class ProductRepoistory:AbstractRepository<ProductModel>,IProductRepository
 {
-    public class ProductRepoistory:AbstractRepository<ProductModel>,IProductRepository
+    public ProductRepoistory(NetShopDbContext context) : base(context)
     {
-        public ProductRepoistory(NetShopDbContext context) : base(context)
-        {
-        }
     }
+    public async Task<IEnumerable<ProductModel>> GetProductsByCategoryAsync() => await _context.Products.Include(p => p.Category).ToListAsync();
 }

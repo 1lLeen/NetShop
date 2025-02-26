@@ -1,15 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace NetShop.Dto.DataEvents;
 
-namespace NetShop.Dto.DataEvents
+public enum DataEventType
 {
-    public enum DataEventType
-    {
-        Added = 1,
-        Updated,
-        Delete
-    }
+    Added = 1,
+    Updated,
+    Delete
 }
