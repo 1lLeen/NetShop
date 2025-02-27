@@ -5,11 +5,12 @@ using NetShop.Dto.Dtos.ProductsDto;
 namespace NetShop.ApiServer.Controllers;
 
 [ApiController]
-[Route("/[controller]/[action]")]
+[Route("api/[controller]/[action]")]
 public class ProductController : ControllerBase
 {
     protected readonly IProductService productService;
     private ILogger logger;
+
     public ProductController(IProductService productService, ILogger logger)
     {
         this.productService = productService;

@@ -5,7 +5,7 @@ using NetShop.Dto.Dtos.CategoriesDto;
 namespace NetShop.ApiServer.Controllers;
 
 [ApiController]
-[Route("/[controller]/[action]")]
+[Route("api/[controller]/[action]")]
 public class CategoryController : ControllerBase
 {
     protected readonly ICategoryService categoryService;
