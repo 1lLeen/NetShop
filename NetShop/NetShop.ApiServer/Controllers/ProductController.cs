@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using NetShop.Application.Servicese.Interfaces;
 using NetShop.Dto.Dtos.ProductsDto;
 
@@ -20,19 +21,27 @@ public class ProductController : Controller
     [Route("/[controller]/[action]")]
     public async Task<IEnumerable<GetProductDto>> GetAllProducts()
     {
-        return await productService.GetAll();
+        return await productService.GetAllAsync();
+    }
+
+    [HttpGet]
+    [Route("/[controller]/[action]")]
+    public async Task<IEnumerable<GetProductDto>> GetProductsByCategory(int idCategory)
+    {
+        return await productService.
     }
     [HttpGet]
     [Route("/[controller]/[action]")]
     public async Task<GetProductDto> GetProductById(Guid id)
     {
-        return await productService.GetById(id);
+        return await productService.GetByIdAsync(id);
     }
+
     [HttpPost]
     [Route("/[controller]/[action]")]
     public async Task<GetProductDto> CreateProduct(CreateProductDto create)
     {
-        var result = await productService.CreateProduct(new CreateProductDto
+        var result = await productService.CreateAsync(new CreateProductDto
         {
             NameProduct = create.NameProduct,
             DescriptionProduct = create.DescriptionProduct,
@@ -42,11 +51,12 @@ public class ProductController : Controller
         });
         return(result);
     }
+
     [HttpPut]
     [Route("/[controller]/[action]")]
     public async Task<GetProductDto> UpdateProduct(Guid id, UpdateProductDto update)
     {
-        var result = await productService.UpdateProduct(id, new UpdateProductDto
+        var result = await productService.UpdateAsync(id, new UpdateProductDto
         {
             NameProduct = update.NameProduct,
             DescriptionProduct = update.DescriptionProduct,
@@ -56,11 +66,12 @@ public class ProductController : Controller
         });
         return(result);
     }
+
     [HttpDelete]
     [Route("/[controller]/[action]")]
     public async Task<GetProductDto> DeleteProduct(Guid id)
     {
-        var result = await productService.DeleteProduct(id);
+        var result = await productService.DeleteAsync(id);
         return result;
     }
 }

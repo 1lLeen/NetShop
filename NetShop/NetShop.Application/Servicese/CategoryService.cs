@@ -13,4 +13,13 @@ public class CategoryService :
     public CategoryService(ILogger logger, IMapper mapper, ICategoryRepository repository) : base(logger, mapper, repository)
     {
     }
+    public async Task<GetCategoryDto> UpdateCategoryAsync(Guid idCategory, UpdateCategoryDto category)
+    {
+        var model = await _repository.GetByIdAsync(idCategory);
+
+        model.NameCategory = category.NameCategory;
+        
+        var result = mapper.Map<GetCategoryDto>(await _repository.UpdateAsync(model));
+        return result;
+    }
 }
