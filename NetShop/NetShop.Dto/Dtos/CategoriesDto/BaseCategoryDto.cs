@@ -8,4 +8,3 @@ public class BaseCategoryDto:IBase
     public string NameCategory { get; set; }
 
 }
-

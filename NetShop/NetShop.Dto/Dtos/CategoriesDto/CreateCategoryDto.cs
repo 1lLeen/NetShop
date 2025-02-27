@@ -5,6 +5,4 @@ namespace NetShop.Dto.Dtos.CategoriesDto;
 public class CreateCategoryDto:BaseCategoryDto,ICreate
 {
     public DateTime CreatedTime { get; set; }
-
 }
-

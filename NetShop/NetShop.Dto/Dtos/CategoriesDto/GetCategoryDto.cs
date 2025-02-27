@@ -7,4 +7,3 @@ public class GetCategoryDto:BaseCategoryDto, IGet
     public DateTime CreatedTime { get; set; }
     public DateTime UpdatedTime { get; set; }
 }
-

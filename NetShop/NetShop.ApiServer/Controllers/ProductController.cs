@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.ModelBinding;
+﻿using Microsoft.AspNetCore.Mvc; 
 using NetShop.Application.Servicese.Interfaces;
 using NetShop.Dto.Dtos.ProductsDto;
 
@@ -7,7 +6,7 @@ namespace NetShop.ApiServer.Controllers;
 
 [ApiController]
 [Route("/[controller]/[action]")]
-public class ProductController : Controller
+public class ProductController : ControllerBase
 {
     protected readonly IProductService productService;
     private ILogger logger;
@@ -17,62 +16,39 @@ public class ProductController : Controller
         this.logger = logger;
     }
 
-    [HttpGet]
-    [Route("/[controller]/[action]")]
-    public async Task<IEnumerable<GetProductDto>> GetAllProducts()
+    [HttpGet] 
+    public async Task<IEnumerable<GetProductDto>> GetAllProductsAsync()
     {
         return await productService.GetAllAsync();
     }
 
-    [HttpGet]
-    [Route("/[controller]/[action]")]
-    public async Task<IEnumerable<GetProductDto>> GetProductsByCategory(int idCategory)
+    [HttpGet] 
+    public async Task<IEnumerable<GetProductDto>> GetProductsByCategoryAsync(Guid idCategory)
     {
-        return await productService.
+        return await productService.GetAllByCategoryAsync();
     }
-    [HttpGet]
-    [Route("/[controller]/[action]")]
-    public async Task<GetProductDto> GetProductById(Guid id)
+    [HttpGet] 
+    public async Task<GetProductDto> GetProductByIdAsync(Guid id)
     {
         return await productService.GetByIdAsync(id);
     }
 
-    [HttpPost]
-    [Route("/[controller]/[action]")]
-    public async Task<GetProductDto> CreateProduct(CreateProductDto create)
-    {
-        var result = await productService.CreateAsync(new CreateProductDto
-        {
-            NameProduct = create.NameProduct,
-            DescriptionProduct = create.DescriptionProduct,
-            DescriptionProduct2 = create.DescriptionProduct2,
-            UrlImg = create.UrlImg,
-            CategoryDto = create.CategoryDto,
-        });
-        return(result);
+    [HttpPost] 
+    public async Task<GetProductDto> CreateProductAsync(CreateProductDto create)
+    { 
+        return await productService.CreateAsync(create);
     }
 
-    [HttpPut]
-    [Route("/[controller]/[action]")]
-    public async Task<GetProductDto> UpdateProduct(Guid id, UpdateProductDto update)
-    {
-        var result = await productService.UpdateAsync(id, new UpdateProductDto
-        {
-            NameProduct = update.NameProduct,
-            DescriptionProduct = update.DescriptionProduct,
-            DescriptionProduct2 = update.DescriptionProduct2,
-            UrlImg = update.UrlImg,
-            CategoryDto = update.CategoryDto
-        });
-        return(result);
+    [HttpPut] 
+    public async Task<GetProductDto> UpdateProductAsync(Guid id, UpdateProductDto update)
+    { 
+        return await productService.UpdateProductAsync(id, update);
     }
 
-    [HttpDelete]
-    [Route("/[controller]/[action]")]
-    public async Task<GetProductDto> DeleteProduct(Guid id)
+    [HttpDelete] 
+    public async Task<GetProductDto> DeleteProductAsync(Guid id)
     {
-        var result = await productService.DeleteAsync(id);
-        return result;
+        return await productService.DeleteAsync(id);
     }
 }
 
