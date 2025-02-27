@@ -21,7 +21,7 @@ public class ProductService: AbstractService<IProductRepository, ProductModel, G
         model.NameProduct = update.NameProduct;
         model.DescriptionProduct = update.DescriptionProduct;
         model.DescriptionProduct2 = update.DescriptionProduct2;
-        model.Category = mapper.Map<CategoryModel>(update.CategoryDto);
+        model.CategoryId = update.CategoryId;
         model.UrlImg = update.UrlImg;
 
         var result = await _repository.UpdateAsync(model);

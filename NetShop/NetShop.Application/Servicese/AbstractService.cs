@@ -40,8 +40,8 @@ public class AbstractService<TRepository,TModel,TGet,TCreate,TUpdate>
 
         BeforeCreate(model,create);
 
-        await _repository.CreateAsync(model);
-        model = await _repository.GetByIdAsync(model.Id);
+        await _repository.CreateAsync(model); 
+
         var result = mapper.Map<TGet>(model);
 
         AfterCreate(result);

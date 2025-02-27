@@ -21,7 +21,8 @@ builder.Services.RegistrationServices();
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "API WSVAP (WebSmartView)", Version = "v1" });
-    c.ResolveConflictingActions(apiDescriptions => apiDescriptions.First()); //This line 
+    c.ResolveConflictingActions(apiDescriptions => apiDescriptions.First()); //This 
+    c.EnableAnnotations();
 });
 
 

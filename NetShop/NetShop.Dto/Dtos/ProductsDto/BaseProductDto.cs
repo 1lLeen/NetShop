@@ -12,6 +12,6 @@ public class BaseProductDto:IBase
     public string DescriptionProduct { get; set; }
     public string DescriptionProduct2 { get; set; }
     public string UrlImg { get; set; }
-    public BaseCategoryDto CategoryDto { get; set; }
+    public Guid CategoryId { get; set; }
 
 }

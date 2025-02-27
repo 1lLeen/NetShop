@@ -10,16 +10,20 @@ public class MappingProfile:Profile
 {
     public MappingProfile()
     {
+        CreateMap<ProductModel, BaseCategoryDto>().ReverseMap();
         CreateMap<ProductModel, GetProductDto>().ReverseMap();
         CreateMap<ProductModel, CreateProductDto>().ReverseMap();
         CreateMap<ProductModel, UpdateProductDto>().ReverseMap();
+        CreateMap<ProductModel, BaseCategoryDto>();
         CreateMap<ProductModel, GetProductDto>();
         CreateMap<ProductModel, CreateProductDto>();
         CreateMap<ProductModel, UpdateProductDto>();
 
+        CreateMap<CategoryModel, BaseCategoryDto>().ReverseMap();
         CreateMap<CategoryModel, GetCategoryDto>().ReverseMap();
         CreateMap<CategoryModel, CreateCategoryDto>().ReverseMap();
         CreateMap<CategoryModel, UpdateCategoryDto>().ReverseMap();
+        CreateMap<CategoryModel, BaseCategoryDto>();
         CreateMap<CategoryModel, GetCategoryDto>();
         CreateMap<CategoryModel, CreateCategoryDto>();
         CreateMap<CategoryModel, UpdateCategoryDto>();
