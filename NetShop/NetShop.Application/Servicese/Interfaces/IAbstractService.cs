@@ -1,21 +1,14 @@
 ﻿using NetShop.Dto.Dtos.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+namespace NetShop.Application.Servicese.Interfaces;
 
-namespace NetShop.Application.Servicese.Interfaces
+public interface IAbstractService<TGet,TCreate, TUpdate>
+    where TGet : IGet
+    where TCreate: ICreate
+    where TUpdate: IUpdate
 {
-    public interface IAbstractService<TGet,TCreate, TUpdate>
-        where TGet : IGet
-        where TCreate: ICreate
-        where TUpdate: IUpdate
-    {
-        Task<IEnumerable<TGet>> GetAll();
-        Task<TGet> GetById(Guid id);
-        Task<TGet> Create(TCreate entity);
-        Task<TGet> Update(TUpdate entity);
-        Task<TGet> Delete(Guid id);
-    }
+    Task<IEnumerable<TGet>> GetAllAsync();
+    Task<TGet> GetByIdAsync(Guid id);
+    Task<TGet> CreateAsync(TCreate entity);
+    Task<TGet> UpdateAsync(TUpdate entity);
+    Task<TGet> DeleteAsync(Guid id);
 }

@@ -21,6 +21,6 @@ public class NetShopDbContext:DbContext
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         base.OnConfiguring(optionsBuilder);
-        optionsBuilder.UseSqlServer("Data Source=LAPTOP-JGD7BPIQ\\MSSQLSERVER12;Initial Catalog=netshopdb;Trusted_Connection=True;");
+        optionsBuilder.UseSqlServer("Data Source=LAPTOP-JGD7BPIQ\\MSSQLSERVER12;Initial Catalog=netshopdb;Trusted_Connection=True;Integrated Security=True;TrustServerCertificate=True;");
     }
 }

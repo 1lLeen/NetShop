@@ -1,19 +1,8 @@
-﻿using NetShop.Dto.Dtos.CategoriesDto;
-using NetShop.Dto.Dtos.ProductsDto;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using NetShop.Dto.Dtos.ProductsDto;
 
-namespace NetShop.Application.Servicese.Interfaces
-{
-    public interface IProductService : IAbstractService<GetProductDto, CreateProductDto, UpdateProductDto>
-    {
-        Task<GetProductDto> GetById(Guid Id);
-        Task<List<GetProductDto>> GetAll();
-        Task<GetProductDto> CreateProduct(CreateProductDto createProductDto);
-        Task<GetProductDto> UpdateProduct(Guid id, UpdateProductDto updateProductDto);
-        Task<GetProductDto> DeleteProduct(Guid Id);
-    }
+namespace NetShop.Application.Servicese.Interfaces;
+
+public interface IProductService : IAbstractService<GetProductDto, CreateProductDto, UpdateProductDto>
+{ 
+    Task<IEnumerable<GetProductDto>> GetAllByCategoryAsync();
 }

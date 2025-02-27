@@ -22,17 +22,19 @@ public class AbstractService<TRepository,TModel,TGet,TCreate,TUpdate>
         this.logger = logger;
         this.mapper = mapper;
     }
-    public async Task<TGet> GetById(Guid Id)
+
+    public async Task<TGet> GetByIdAsync(Guid Id)
     {
         var model = await _repository.GetByIdAsync(Id);
         return mapper.Map<TGet>(model);
     }
-    public async Task<List<TGet>> GetAll()
+
+    public async Task<IEnumerable<TGet>> GetAllAsync()
     {
         var list = await _repository.GetAllAsync();
         return mapper.Map<List<TGet>>(list);
     }
-    public async Task<TGet> Create(TCreate create)
+    public async Task<TGet> CreateAsync(TCreate create)
     {
         var model = mapper.Map<TModel>(create);
 
@@ -46,7 +48,8 @@ public class AbstractService<TRepository,TModel,TGet,TCreate,TUpdate>
 
         return result;
     }
-    public async Task<TGet> Update(TUpdate update) 
+
+    public async Task<TGet> UpdateAsync(TUpdate update) 
     {
         var model = mapper.Map<TModel>(update);
 
@@ -60,7 +63,8 @@ public class AbstractService<TRepository,TModel,TGet,TCreate,TUpdate>
 
         return result;
     }
-    public async Task<TGet> Delete(Guid id)
+
+    public async Task<TGet> DeleteAsync(Guid id)
     {
         var model = await _repository.GetByIdAsync(id);
         if(model == null)
@@ -75,6 +79,7 @@ public class AbstractService<TRepository,TModel,TGet,TCreate,TUpdate>
 
         return result;
     }
+
     protected virtual Task BeforeCreate(TModel model, TCreate dto) => Task.CompletedTask;
     protected virtual Task BeforeUpdate(TModel model, TUpdate dto) => Task.CompletedTask;
 
